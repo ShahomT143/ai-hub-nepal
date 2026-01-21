@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Hub Nepal — Content, Marketing & AI Video Creation</title>
+  <meta name="description" content="AI Hub Nepal provides content creation, digital marketing, AI video creation, logo design, web design, website creation, and video editing." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#070B12;
+      --bg2:#0B1220;
+      --card: rgba(255,255,255,.06);
+      --stroke: rgba(255,255,255,.12);
+      --text:#EAF2FF;
+      --muted: rgba(234,242,255,.72);
+      --muted2: rgba(234,242,255,.55);
+      --accent:#3FF7C6;
+      --accent2:#42A5FF;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius: 22px;
+      --max: 1140px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 600px at 20% 10%, rgba(66,165,255,.22), transparent 60%),
+        radial-gradient(700px 500px at 80% 15%, rgba(63,247,198,.18), transparent 60%),
+        radial-gradient(700px 500px at 55% 85%, rgba(140,255,220,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+
+    /* Layout */
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+    .section{padding:84px 0}
+    .grid{display:grid; gap:22px}
+
+    /* Top Nav */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(7,11,18,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+    }
+    .brand{display:flex; gap:12px; align-items:center}
+    .brand-badge{
+      width:40px; height:40px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(63,247,198,.22), rgba(66,165,255,.18));
+      border:1px solid rgba(255,255,255,.12);
+      display:grid; place-items:center;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .brand-badge img{width:100%; height:100%; object-fit:cover; opacity:.95}
+    .brand h1{font-size:14px; margin:0; letter-spacing:.2px}
+    .brand p{margin:0; font-size:12px; color:var(--muted2)}
+
+    .nav-links{display:flex; gap:16px; align-items:center}
+    .nav-links a{
+      font-size:13px; color:var(--muted);
+      padding:10px 12px; border-radius:12px;
+      border:1px solid transparent;
+      transition: .2s ease;
+    }
+    .nav-links a:hover{color:var(--text); border-color:rgba(255,255,255,.12); background:rgba(255,255,255,.05)}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.22)}
+    .btn.primary{
+      border-color: rgba(63,247,198,.35);
+      background: linear-gradient(135deg, rgba(63,247,198,.18), rgba(66,165,255,.16));
+    }
+    .btn.primary:hover{border-color: rgba(63,247,198,.55)}
+
+    .menu-btn{display:none}
+
+    /* Hero */
+    .hero{padding:56px 0 28px}
+    .hero-wrap{
+      position:relative;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background:
+        radial-gradient(800px 400px at 20% 30%, rgba(63,247,198,.16), transparent 60%),
+        radial-gradient(700px 400px at 80% 25%, rgba(66,165,255,.20), transparent 60%),
+        rgba(255,255,255,.04);
+    }
+
+    /* Optional: replace hero background image with your own */
+    .hero-bg{
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(180deg, rgba(7,11,18,.45), rgba(7,11,18,.85)),
+        url("assets/aihub-hero.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05) contrast(1.05);
+      opacity:.95;
+    }
+
+    .hero-inner{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:28px;
+      padding:54px 26px;
+      align-items:center;
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-size: 13px;
+      width:fit-content;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, var(--accent), rgba(63,247,198,.25));
+      box-shadow: 0 0 22px rgba(63,247,198,.35);
+    }
+    .hero h2{
+      margin:14px 0 10px;
+      font-size: 44px;
+      line-height:1.08;
+      letter-spacing: -1px;
+    }
+    .hero h2 .grad{
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .hero p{margin:0; font-size:16px; color:var(--muted); line-height:1.6; max-width: 62ch}
+    .hero-actions{display:flex; gap:12px; margin-top:22px; flex-wrap:wrap}
+
+    .stats{
+      margin-top:22px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .stat{
+      padding:14px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      min-width: 160px;
+    }
+    .stat b{display:block; font-size:14px}
+    .stat span{display:block; color:var(--muted2); font-size:12px; margin-top:4px}
+
+    .hero-card{
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      padding: 18px;
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+    }
+    .logo-wrap{
+      border-radius: 20px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      position:relative;
+    }
+    .logo-wrap img{width:100%; display:block; height: 240px; object-fit: cover; filter: contrast(1.05) saturate(1.06)}
+    .logo-overlay{
+      position:absolute; inset:0;
+      background: radial-gradient(380px 220px at 40% 30%, rgba(63,247,198,.18), transparent 60%);
+      pointer-events:none;
+    }
+
+    .chip-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .chip{
+      font-size:12px;
+      color: var(--muted);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      border-radius: 999px;
+      padding:8px 10px;
+      display:inline-flex;
+      gap:8px; align-items:center;
+    }
+
+    /* Headings */
+    .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:18px; margin-bottom:22px}
+    .section-head h3{margin:0; font-size:26px; letter-spacing:-.4px}
+    .section-head p{margin:0; color:var(--muted); max-width:68ch; line-height:1.6}
+
+    /* Services */
+    .cards{grid-template-columns: repeat(3, 1fr)}
+    .card{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      padding: 18px;
+      box-shadow: 0 16px 40px rgba(0,0,0,.25);
+      transition: transform .18s ease, border-color .2s ease, background .2s ease;
+    }
+    .card:hover{transform: translateY(-3px); border-color: rgba(63,247,198,.22); background: rgba(255,255,255,.06)}
+    .card-top{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:10px}
+    .icon{
+      width:44px; height:44px; border-radius: 16px;
+      border:1px solid rgba(255,255,255,.14);
+      background: linear-gradient(135deg, rgba(63,247,198,.16), rgba(66,165,255,.14));
+      display:grid; place-items:center;
+    }
+    .icon svg{width:22px; height:22px; opacity:.95}
+    .tag{
+      font-size:12px; color: var(--muted);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      padding:7px 10px; border-radius: 999px;
+    }
+    .card h4{margin:6px 0 8px; font-size:16px}
+    .card p{margin:0; color:var(--muted); line-height:1.6; font-size:13.5px}
+
+    /* Portfolio */
+    .portfolio{grid-template-columns: repeat(3, 1fr)}
+    .work{
+      border-radius: 22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 16px 40px rgba(0,0,0,.22);
+      position:relative;
+    }
+    .work img{width:100%; height: 210px; object-fit: cover; display:block; filter: contrast(1.03) saturate(1.06)}
+    .work .meta{padding:14px 14px 16px}
+    .work b{display:block; font-size:14px}
+    .work span{display:block; margin-top:6px; color:var(--muted); font-size:12.5px; line-height:1.5}
+    .work::after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(500px 200px at 30% 20%, rgba(66,165,255,.18), transparent 60%);
+      pointer-events:none;
+    }
+
+    /* About + Testimonials */
+    .two-col{grid-template-columns: 1fr 1fr; align-items:start}
+    .panel{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      padding: 18px;
+      box-shadow: 0 16px 40px rgba(0,0,0,.22);
+    }
+    .panel h4{margin:0 0 8px; font-size:16px}
+    .panel p{margin:0; color:var(--muted); line-height:1.7; font-size:13.5px}
+
+    .quote{display:flex; gap:12px; margin-top:12px; padding-top:12px; border-top:1px solid rgba(255,255,255,.10)}
+    .avatar{
+      width:42px; height:42px; border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(135deg, rgba(63,247,198,.14), rgba(66,165,255,.12));
+      display:grid; place-items:center;
+      flex: 0 0 auto;
+    }
+    .quote b{display:block; font-size:13.5px}
+    .quote span{display:block; margin-top:3px; color:var(--muted2); font-size:12px}
+
+    /* Contact */
+    .contact-wrap{grid-template-columns: 1fr 1fr}
+    .field{display:flex; flex-direction:column; gap:8px; margin-bottom:12px}
+    label{font-size:12px; color:var(--muted2)}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+      outline:none;
+      font-family: inherit;
+      font-size:14px;
+    }
+    textarea{min-height:120px; resize: vertical}
+    input:focus, textarea:focus{border-color: rgba(63,247,198,.35)}
+
+    .small{font-size:12px; color:var(--muted2); line-height:1.6}
+
+    /* Footer */
+    footer{
+      padding: 28px 0 40px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      background: rgba(7,11,18,.4);
+    }
+    .footer-inner{display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap}
+    .footer-inner small{color:var(--muted2)}
+
+    /* Reveal animation */
+    .reveal{opacity:0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease}
+    .reveal.show{opacity:1; transform:none}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-inner{grid-template-columns: 1fr; padding: 42px 18px}
+      .cards{grid-template-columns: repeat(2, 1fr)}
+      .portfolio{grid-template-columns: repeat(2, 1fr)}
+      .two-col{grid-template-columns: 1fr}
+      .contact-wrap{grid-template-columns: 1fr}
+      .hero h2{font-size: 38px}
+    }
+    @media (max-width: 640px){
+      .nav-links{display:none}
+      .menu-btn{display:inline-flex}
+      .cards{grid-template-columns: 1fr}
+      .portfolio{grid-template-columns: 1fr}
+      .hero h2{font-size: 34px}
+      .stat{min-width: 0; flex: 1}
+    }
+
+    /* Mobile drawer */
+    .drawer{
+      position:fixed; inset: 0;
+      background: rgba(0,0,0,.55);
+      display:none;
+      z-index:60;
+    }
+    .drawer.open{display:block}
+    .drawer-panel{
+      position:absolute; right:0; top:0; height:100%; width:min(92vw, 360px);
+      background: rgba(7,11,18,.92);
+      border-left: 1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(14px);
+      padding: 14px;
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .drawer-panel a{padding:12px 12px; border-radius: 14px; border:1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.04); color: var(--muted)}
+    .drawer-panel a:hover{color:var(--text); border-color: rgba(63,247,198,.20)}
+  </style>
+</head>
+
+<body>
+  <!-- Mobile Drawer -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Mobile menu">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:6px 4px 12px;">
+        <div class="brand">
+          <div class="brand-badge" aria-hidden="true">
+            <img src="assets/aihub-logo-square.jpg" alt="" />
+          </div>
+          <div>
+            <h1>AI Hub Nepal</h1>
+            <p>Creative • AI • Growth</p>
+          </div>
+        </div>
+        <button class="btn" id="closeDrawer" type="button">Close</button>
+      </div>
+      <a href="#services" class="drawer-link">Services</a>
+      <a href="#portfolio" class="drawer-link">Work</a>
+      <a href="#about" class="drawer-link">About</a>
+      <a href="#contact" class="drawer-link">Contact</a>
+      <div style="margin-top:auto; padding-top:10px; border-top:1px solid rgba(255,255,255,.10)">
+        <a class="btn primary" href="#contact" style="width:100%">Get a Free Quote</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="#top">
+          <div class="brand-badge" aria-hidden="true">
+            <!-- Replace with your logo square image -->
+            <img src="assets/aihub-logo-square.jpg" alt="AI Hub Nepal logo" />
+          </div>
+          <div>
+            <h1>AI Hub Nepal</h1>
+            <p>Content • Marketing • AI Video</p>
+          </div>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#services">Services</a>
+          <a href="#portfolio">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div style="display:flex; gap:10px; align-items:center;">
+          <a class="btn primary" href="#contact">Get a Quote</a>
+          <button class="btn menu-btn" id="openDrawer" type="button">Menu</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-wrap reveal">
+          <div class="hero-bg" aria-hidden="true"></div>
+          <div class="hero-inner">
+            <div>
+              <div class="kicker"><span class="dot" aria-hidden="true"></span> Professional & Creative Digital Studio</div>
+              <h2>
+                Build your brand with <span class="grad">content</span>, <span class="grad">marketing</span> & <span class="grad">AI videos</span>.
+              </h2>
+              <p>
+                AI Hub Nepal helps businesses grow with scroll‑stopping content, performance marketing, premium AI video creation,
+                strong brand design, and modern websites—built for trust and conversion.
+              </p>
+
+              <div class="hero-actions">
+                <a class="btn primary" href="#contact">Start a Project</a>
+                <a class="btn" href="#services">Explore Services</a>
+              </div>
+
+              <div class="stats">
+                <div class="stat">
+                  <b>Fast Delivery</b>
+                  <span>Clear timelines, on‑time output</span>
+                </div>
+                <div class="stat">
+                  <b>Premium Quality</b>
+                  <span>Professional look & clean design</span>
+                </div>
+                <div class="stat">
+                  <b>Business Focused</b>
+                  <span>Made to attract & convert customers</span>
+                </div>
+              </div>
+            </div>
+
+            <aside class="hero-card">
+              <div class="logo-wrap">
+                <!-- Replace with your circular logo / poster image -->
+                <img src="assets/aihub-logo-circle.jpg" alt="AI Hub Nepal" />
+                <div class="logo-overlay" aria-hidden="true"></div>
+              </div>
+              <div class="chip-row" aria-label="Highlights">
+                <span class="chip">⚡ Content Creation</span>
+                <span class="chip">📈 Digital Marketing</span>
+                <span class="chip">🎬 AI Video Creation</span>
+                <span class="chip">🎨 Logo & Branding</span>
+                <span class="chip">🖥️ Web Design</span>
+                <span class="chip">✂️ Video Editing</span>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h3>Services</h3>
+            <p>
+              Everything you need to grow online—creative production, brand design, and conversion‑focused marketing.
+            </p>
+          </div>
+          <a class="btn" href="#contact">Request Pricing</a>
+        </div>
+
+        <div class="grid cards">
+          <div class="card reveal">
+            <div class="card-top">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M8 20h8"/><path d="M12 16v4"/></svg>
+              </div>
+              <span class="tag">Strategy + Production</span>
+            </div>
+            <h4>Content Creation</h4>
+            <p>Reels/shorts scripts, branded posts, ad creatives, product promos—designed to grab attention.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-top">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 13l3 3 7-7"/></svg>
+              </div>
+              <span class="tag">Ads + Growth</span>
+            </div>
+            <h4>Digital Marketing</h4>
+            <p>Meta/Facebook marketing, campaign setup, audience targeting, reporting, and optimization.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-top">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><path d="M1 5h15v14H1z"/></svg>
+              </div>
+              <span class="tag">Modern & Trendy</span>
+            </div>
+            <h4>AI Video Creation</h4>
+            <p>Hyper‑realistic ads, explainer videos, product visuals, and short‑form content with strong storytelling.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-top">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+              </div>
+              <span class="tag">Identity</span>
+            </div>
+            <h4>Logo Design</h4>
+            <p>Clean, memorable logos with brand colors, typography, and usage guidelines.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-top">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+              </div>
+              <span class="tag">UI/UX</span>
+            </div>
+            <h4>Web Designing</h4>
+            <p>Modern layouts, mobile‑first design, and fast pages that feel premium and trustworthy.</p>
+          </div>
+
+          <div class="card reveal">
+            <div class="card-top">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><path d="M9 18a3 3 0 1 0 0-6"/><path d="M21 16a3 3 0 1 0 0-6"/></svg>
+              </div>
+              <span class="tag">Editing</span>
+            </div>
+            <h4>Video Editing</h4>
+            <p>Reels/YouTube edits, subtitles, clean cuts, color tuning, and engaging pacing.</p>
+          </div>
+
+          <div class="card reveal" style="grid-column: 1 / -1;">
+            <div class="card-top">
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M12 3v18"/></svg>
+              </div>
+              <span class="tag">Full Package</span>
+            </div>
+            <h4>Website Creation</h4>
+            <p>
+              Complete website setup with responsive design, sections you need (services, portfolio, contact), and SEO basics.
+              (You can host on your preferred platform.)
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h3>Recent Work</h3>
+            <p>Showcase your best projects here. Replace images and text with your real work anytime.</p>
+          </div>
+          <a class="btn" href="#contact">Want similar results?</a>
+        </div>
+
+        <div class="grid portfolio">
+          <article class="work reveal">
+            <img src="assets/work-1.jpg" alt="AI video ad sample" />
+            <div class="meta">
+              <b>AI Video Ad</b>
+              <span>Short‑form product ad with strong hook + clear CTA.</span>
+            </div>
+          </article>
+          <article class="work reveal">
+            <img src="assets/work-2.jpg" alt="Digital marketing campaign sample" />
+            <div class="meta">
+              <b>Marketing Campaign</b>
+              <span>Targeting + creative testing for better reach & leads.</span>
+            </div>
+          </article>
+          <article class="work reveal">
+            <img src="assets/work-3.jpg" alt="Logo and branding sample" />
+            <div class="meta">
+              <b>Logo & Branding</b>
+              <span>Clean identity system with modern colors and typography.</span>
+            </div>
+          </article>
+        </div>
+
+        <p class="small" style="margin-top:14px;">
+          Tip: Put your real portfolio screenshots in <code>assets/</code> and update file names above.
+        </p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h3>About AI Hub Nepal</h3>
+            <p>
+              A creative + tech studio built for Nepali businesses. We combine storytelling, design, and AI tools to produce premium work—fast.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid two-col">
+          <div class="panel reveal">
+            <h4>Why clients choose us</h4>
+            <p>
+              We focus on what matters: clear message, premium visuals, and a smooth customer journey.
+              From content to websites—everything stays consistent with your brand.
+            </p>
+            <div class="quote">
+              <div class="avatar" aria-hidden="true">★</div>
+              <div>
+                <b>Professional, fast & creative</b>
+                <span>On‑time delivery with clean, premium output.</span>
+              </div>
+            </div>
+            <div class="quote">
+              <div class="avatar" aria-hidden="true">✓</div>
+              <div>
+                <b>Business‑first approach</b>
+                <span>Every design and video is made to attract customers.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel reveal">
+            <h4>What you get</h4>
+            <p>
+              A clear workflow: brief → concept → draft → revision → final delivery.
+              You’ll receive files ready for social media, ads, and web.
+            </p>
+            <div class="quote">
+              <div class="avatar" aria-hidden="true">⚡</div>
+              <div>
+                <b>Quick turnaround</b>
+                <span>Ideal for trends and urgent campaigns.</span>
+              </div>
+            </div>
+            <div class="quote">
+              <div class="avatar" aria-hidden="true">🎯</div>
+              <div>
+                <b>Conversion‑ready assets</b>
+                <span>Hooks, CTAs, and layouts that perform.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h3>Let’s Work Together</h3>
+            <p>Tell us what you need. We’ll reply with a plan, timeline, and pricing.</p>
+          </div>
+        </div>
+
+        <div class="grid contact-wrap">
+          <div class="panel reveal">
+            <h4>Contact Info</h4>
+            <p style="margin-bottom:12px">Update the details below with your real information.</p>
+            <p class="small"><b>WhatsApp / Phone:</b> <span style="color:var(--muted)">+977-98XXXXXXXX</span></p>
+            <p class="small"><b>Email:</b> <span style="color:var(--muted)">aihubnepal@gmail.com</span></p>
+            <p class="small"><b>Location:</b> <span style="color:var(--muted)">Nepal</span></p>
+            <div style="height:12px"></div>
+            <a class="btn primary" href="https://wa.me/" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            <p class="small" style="margin-top:12px">You can also link your Facebook/Instagram/TikTok here.</p>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
+              <a class="btn" href="#" target="_blank" rel="noopener">Instagram</a>
+              <a class="btn" href="#" target="_blank" rel="noopener">Facebook</a>
+              <a class="btn" href="#" target="_blank" rel="noopener">YouTube</a>
+            </div>
+          </div>
+
+          <div class="panel reveal">
+            <h4>Project Request</h4>
+            <form id="contactForm">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email / Phone</label>
+                <input id="email" name="email" placeholder="Email or phone number" required />
+              </div>
+              <div class="field">
+                <label for="service">Service you need</label>
+                <input id="service" name="service" placeholder="e.g., AI video ad, logo, website" />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us about your business and your goal..." required></textarea>
+              </div>
+              <button class="btn primary" type="submit">Send Request</button>
+              <p class="small" id="formNote" style="margin-top:10px"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <div class="brand">
+            <div class="brand-badge" aria-hidden="true">
+              <img src="assets/aihub-logo-square.jpg" alt="" />
+            </div>
+            <div>
+              <h1>AI Hub Nepal</h1>
+              <p>Creative • AI • Growth</p>
+            </div>
+          </div>
+          <small>© <span id="year"></span> AI Hub Nepal. All rights reserved.</small>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add('show');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    // Mobile drawer
+    const drawer = document.getElementById('drawer');
+    const openDrawer = document.getElementById('openDrawer');
+    const closeDrawer = document.getElementById('closeDrawer');
+    const close = () => { drawer.classList.remove('open'); drawer.setAttribute('aria-hidden', 'true'); };
+    const open = () => { drawer.classList.add('open'); drawer.setAttribute('aria-hidden', 'false'); };
+    if (openDrawer) openDrawer.addEventListener('click', open);
+    if (closeDrawer) closeDrawer.addEventListener('click', close);
+    drawer.addEventListener('click', (e) => { if (e.target === drawer) close(); });
+    document.querySelectorAll('.drawer-link').forEach(a => a.addEventListener('click', close));
+
+    // Contact form (client-side demo)
+    // Replace with your backend, Google Form, Formspree, or WhatsApp integration.
+    const form = document.getElementById('contactForm');
+    const note = document.getElementById('formNote');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      note.textContent = 'Thanks! Your request is ready to send. (Connect this form to WhatsApp/Formspree/backend to receive messages.)';
+      // Example: open WhatsApp with prefilled message
+      // const msg = encodeURIComponent(`Name: ${data.name}\nContact: ${data.email}\nService: ${data.service}\nMessage: ${data.message}`);
+      // window.open(`https://wa.me/97798XXXXXXXX?text=${msg}`, '_blank');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
